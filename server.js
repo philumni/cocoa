@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var port =8000;
-var host="https://first-philumni.b4a.run"
+var host="localhost";
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", function (req, res) {
