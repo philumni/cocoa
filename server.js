@@ -1,8 +1,16 @@
-const http = require("http");
-const host = 'localhost';
-const port = 3000;
-const requestListener = function (req, res) {};
-const server = http.createServer(requestListener);
-console.log("server starting.");
-server.listen(port, host, () => { console.log(`Server is running on http://${host}:${port}`); }); 
+var express = require('express');
+var path = require('path');
+var app = express();
+var port =8000;
+app.use(express.static(path.join(__dirname, 'public')));
 
+app.get("/", function (req, res) {
+    res.sendfile('public/first.html');
+});
+
+module.exports = app;
+console.log("ready");
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
