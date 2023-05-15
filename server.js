@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var port =8000;
+var host="https://first-philumni.b4a.run"
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", function (req, res) {
@@ -11,6 +12,6 @@ app.get("/", function (req, res) {
 module.exports = app;
 console.log("ready");
 
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log(`Example app listening on port ${port}`)
 })
